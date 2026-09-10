@@ -1,0 +1,3103 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
+
+
+/* =========================================================
+   ARCANA POTIONS
+   SISTEMA VISUAL PRINCIPAL
+========================================================= */
+
+:root {
+
+    /* Fundo */
+    --fundo: #08070b;
+    --fundo-secundario: #0e0c12;
+    --fundo-card: #121018;
+
+    /* Identidade */
+    --dourado: #c9a45c;
+    --dourado-claro: #e1c986;
+
+    --roxo: #8b5fbf;
+    --roxo-claro: #b58bdd;
+
+    /* Texto */
+    --texto: #eee8dc;
+    --texto-secundario: #96909a;
+    --texto-fraco: #625d66;
+
+    /* Bordas */
+    --borda: #29242e;
+    --borda-clara: #39323e;
+
+    /* Sombras */
+    --sombra: rgba(0, 0, 0, 0.55);
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    background-color: var(--fundo);
+    color: var(--texto);
+
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+
+    line-height: 1.6;
+
+    overflow-x: hidden;
+
+    transition:
+        background-color 0.7s ease,
+        color 0.7s ease;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   TIPOGRAFIA
+========================================================= */
+
+h1,
+h2,
+h3,
+.logo,
+.etiqueta,
+.categoria-numero,
+.codigo,
+.dados-entrada,
+.marcacao,
+.duracoes,
+.footer-logo {
+
+    font-family: 'Cinzel', serif;
+}
+
+em {
+
+    color: var(--dourado);
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.topo {
+
+    position: relative;
+    z-index: 20;
+
+    width: 100%;
+    min-height: 86px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 5vw;
+
+    border-bottom: 1px solid var(--borda);
+
+    background-color: rgba(8, 7, 11, 0.88);
+
+    backdrop-filter: blur(12px);
+
+    transition:
+        background-color 0.7s ease,
+        border-color 0.7s ease;
+}
+
+
+/* LOGO */
+
+.logo {
+
+    display: flex;
+    flex-direction: column;
+
+    line-height: 1;
+}
+
+.logo span {
+
+    color: var(--texto);
+
+    font-size: 22px;
+    font-weight: 600;
+
+    letter-spacing: 6px;
+}
+
+.logo small {
+
+    margin-top: 7px;
+
+    color: var(--texto-fraco);
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 6px;
+    letter-spacing: 3px;
+}
+
+
+/* MENU */
+
+.menu {
+
+    display: flex;
+    align-items: center;
+
+    gap: 34px;
+}
+
+.menu a {
+
+    position: relative;
+
+    color: var(--texto-secundario);
+
+    font-size: 9px;
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    transition:
+        color 0.3s ease;
+}
+
+.menu a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -8px;
+
+    width: 0;
+    height: 1px;
+
+    background-color: var(--dourado);
+
+    transition:
+        width 0.3s ease;
+}
+
+.menu a:hover {
+
+    color: var(--texto);
+}
+
+.menu a:hover::after {
+
+    width: 100%;
+}
+
+
+/* CONTROLES */
+
+.controles {
+
+    display: flex;
+    align-items: center;
+
+    gap: 25px;
+}
+
+
+/* =========================================================
+   ARCANA THEME SEAL
+========================================================= */
+
+.tema-arcana {
+
+    position: relative;
+
+    width: 82px;
+    height: 52px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 1px;
+
+    border: 1px solid var(--borda-clara);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(139, 95, 191, 0.10),
+            transparent 72%
+        );
+
+    color: var(--texto);
+
+    cursor: pointer;
+
+    font-family: 'Cinzel', serif;
+
+    transition:
+        border-color 0.4s ease,
+        box-shadow 0.4s ease,
+        background 0.5s ease,
+        transform 0.3s ease;
+}
+
+
+/* CANTOS */
+
+.tema-arcana::before,
+.tema-arcana::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 8px;
+    height: 8px;
+
+    border-color: var(--dourado);
+
+    border-style: solid;
+
+    transition:
+        border-color 0.4s ease,
+        width 0.4s ease,
+        height 0.4s ease;
+}
+
+.tema-arcana::before {
+
+    top: -1px;
+    left: -1px;
+
+    border-width: 1px 0 0 1px;
+}
+
+.tema-arcana::after {
+
+    right: -1px;
+    bottom: -1px;
+
+    border-width: 0 1px 1px 0;
+}
+
+
+/* RUNA */
+
+.tema-runa {
+
+    position: absolute;
+
+    top: -10px;
+
+    width: 21px;
+    height: 21px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--dourado);
+
+    background: var(--fundo);
+
+    color: var(--dourado);
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 17px;
+    line-height: 1;
+
+    transition:
+        transform 0.7s ease,
+        color 0.4s ease,
+        border-color 0.4s ease,
+        background 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+
+/* NOME */
+
+.tema-nome {
+
+    margin-top: 6px;
+
+    color: var(--texto);
+
+    font-family: 'Cinzel', serif;
+
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.4s ease,
+        letter-spacing 0.5s ease,
+        color 0.4s ease;
+}
+
+
+/* DETALHE */
+
+.tema-detalhe {
+
+    color: var(--texto-fraco);
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 5px;
+
+    letter-spacing: 2.5px;
+
+    transition:
+        color 0.4s ease;
+}
+
+
+/* HOVER */
+
+.tema-arcana:hover {
+
+    border-color: var(--dourado);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(139, 95, 191, 0.16),
+            transparent 72%
+        );
+
+    box-shadow:
+        0 0 18px rgba(139, 95, 191, 0.14);
+
+    transform: translateY(-1px);
+}
+
+.tema-arcana:hover .tema-runa {
+
+    transform: rotate(180deg);
+
+    box-shadow:
+        0 0 12px rgba(201, 164, 92, 0.22);
+}
+
+.tema-arcana:hover .tema-nome {
+
+    letter-spacing: 3px;
+}
+
+
+/* ANIMAÇÃO DE TROCA */
+
+.tema-arcana.trocando .tema-nome {
+
+    animation:
+        desmontarTexto 0.65s ease forwards;
+}
+
+.tema-arcana.trocando .tema-runa {
+
+    animation:
+        girarRuna 0.65s ease;
+}
+
+@keyframes desmontarTexto {
+
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+        letter-spacing: 2px;
+    }
+
+    40% {
+        opacity: 0;
+        transform: translateY(-6px);
+        letter-spacing: 8px;
+    }
+
+    60% {
+        opacity: 0;
+        transform: translateY(6px);
+        letter-spacing: 8px;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        letter-spacing: 2px;
+    }
+}
+
+@keyframes girarRuna {
+
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(180deg) scale(0.7);
+    }
+
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+
+/* =========================================================
+   CARRINHO
+========================================================= */
+
+.carrinho {
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    color: var(--texto-secundario);
+
+    font-size: 8px;
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+.carrinho strong {
+
+    width: 27px;
+    height: 27px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--borda-clara);
+
+    color: var(--dourado);
+
+    font-size: 8px;
+    font-weight: 400;
+
+    transition:
+        border-color 0.3s ease,
+        color 0.3s ease;
+}
+
+.carrinho:hover strong {
+
+    border-color: var(--dourado);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.entrada {
+
+    position: relative;
+
+    min-height: calc(100vh - 86px);
+
+    display: grid;
+
+    grid-template-columns: 1fr 0.8fr;
+
+    align-items: center;
+
+    padding: 8vh 9vw;
+
+    overflow: hidden;
+
+    border-bottom: 1px solid var(--borda);
+}
+
+.entrada::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 650px;
+    height: 650px;
+
+    right: 5%;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(139, 95, 191, 0.13),
+            transparent 65%
+        );
+
+    pointer-events: none;
+}
+
+.entrada-conteudo {
+
+    position: relative;
+    z-index: 2;
+}
+
+.codigo {
+
+    display: flex;
+
+    gap: 25px;
+
+    margin-bottom: 35px;
+
+    color: var(--texto-fraco);
+
+    font-size: 7px;
+    letter-spacing: 2px;
+}
+
+.entrada h1 {
+
+    color: var(--texto);
+
+    font-size: clamp(50px, 7vw, 105px);
+
+    line-height: 0.93;
+
+    font-weight: 500;
+
+    letter-spacing: -3px;
+}
+
+.entrada h1 span {
+
+    color: var(--dourado);
+
+    transition:
+        color 0.7s ease;
+}
+
+.frase {
+
+    margin-top: 30px;
+
+    color: var(--texto-secundario);
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 21px;
+
+    line-height: 1.25;
+}
+
+
+/* =========================================================
+   BOTÃO PRINCIPAL
+========================================================= */
+
+.botao-principal {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 22px;
+
+    margin-top: 40px;
+
+    padding: 15px 20px;
+
+    border: 1px solid var(--borda-clara);
+
+    color: var(--texto);
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    transition:
+        border-color 0.3s ease,
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.botao-principal span {
+
+    color: var(--dourado);
+
+    font-size: 13px;
+
+    transition:
+        transform 0.3s ease;
+}
+
+.botao-principal:hover {
+
+    border-color: var(--dourado);
+
+    background-color:
+        rgba(201, 164, 92, 0.04);
+
+    transform: translateY(-2px);
+}
+
+.botao-principal:hover span {
+
+    transform:
+        translate(3px, -3px);
+}
+
+
+/* =========================================================
+   FRASCO
+========================================================= */
+
+.frasco-area {
+
+    position: relative;
+
+    height: 620px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.frasco-area::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(139, 95, 191, 0.10),
+            transparent 70%
+        );
+
+    filter: blur(15px);
+
+    pointer-events: none;
+}
+
+.circulo-magico {
+
+    position: absolute;
+
+    width: 430px;
+    height: 430px;
+
+    border: 1px solid rgba(139, 95, 191, 0.28);
+
+    border-radius: 50%;
+
+    animation:
+        girar 35s linear infinite;
+}
+
+.circulo-magico::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 35px;
+
+    border: 1px solid rgba(201, 164, 92, 0.16);
+
+    border-radius: 50%;
+}
+
+.circulo-magico::after {
+
+    content: "✦";
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    color: var(--roxo);
+
+    font-size: 30px;
+}
+
+.circulo-magico span {
+
+    position: absolute;
+
+    top: 16px;
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    color: var(--texto-fraco);
+
+    font-family: 'Cinzel', serif;
+
+    font-size: 7px;
+    letter-spacing: 5px;
+}
+
+
+/* FRASCO */
+
+.frasco {
+
+    position: relative;
+    z-index: 3;
+
+    width: 145px;
+    height: 270px;
+}
+
+.frasco-tampa {
+
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    width: 60px;
+    height: 55px;
+
+    border: 1px solid var(--borda-clara);
+
+    border-bottom: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            #15121a,
+            #29222d,
+            #15121a
+        );
+}
+
+.frasco-corpo {
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+
+    transform:
+        translateX(-50%);
+
+    width: 125px;
+    height: 220px;
+
+    overflow: hidden;
+
+    border: 1px solid var(--borda-clara);
+
+    border-radius:
+        15px 15px 35px 35px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.02),
+            rgba(255,255,255,0.08),
+            rgba(255,255,255,0.02)
+        );
+
+    box-shadow:
+        inset 0 0 25px rgba(255,255,255,0.025),
+        0 20px 50px var(--sombra);
+}
+
+.liquido {
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 73%;
+
+    background:
+        radial-gradient(
+            circle at 40% 30%,
+            rgba(200, 150, 255, 0.65),
+            transparent 30%
+        ),
+        linear-gradient(
+            180deg,
+            #613b82,
+            #1d0c2a
+        );
+
+    box-shadow:
+        0 -10px 35px rgba(139, 95, 191, 0.35);
+}
+
+.simbolo {
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    color:
+        rgba(225, 201, 134, 0.65);
+
+    font-family: 'Cinzel', serif;
+
+    font-size: 34px;
+    font-weight: 500;
+}
+
+.informacao-frasco {
+
+    position: absolute;
+
+    right: -10px;
+    bottom: 115px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+
+    color: var(--texto-fraco);
+
+    font-size: 6px;
+    letter-spacing: 2px;
+}
+
+.informacao-frasco strong {
+
+    color: var(--dourado);
+
+    font-family: 'Cinzel', serif;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   ANIMAÇÃO
+========================================================= */
+
+@keyframes girar {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   DADOS
+========================================================= */
+
+.dados-entrada {
+
+    position: absolute;
+
+    left: 9vw;
+    bottom: 35px;
+
+    display: flex;
+
+    gap: 45px;
+}
+
+.dados-entrada div {
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+.dados-entrada span {
+
+    color: var(--texto-fraco);
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 6px;
+    letter-spacing: 2px;
+}
+
+.dados-entrada strong {
+
+    color: var(--texto-secundario);
+
+    font-size: 7px;
+    font-weight: 400;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   MANIFESTO
+========================================================= */
+
+.manifesto {
+
+    display: grid;
+
+    grid-template-columns: 120px 1fr;
+
+    gap: 7vw;
+
+    padding: 150px 12vw;
+
+    background-color: var(--fundo-secundario);
+
+    border-bottom: 1px solid var(--borda);
+}
+
+.numero {
+
+    color: var(--dourado);
+
+    font-family: 'Cinzel', serif;
+
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+.etiqueta {
+
+    margin-bottom: 20px;
+
+    color: var(--texto-fraco);
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 7px;
+    letter-spacing: 3px;
+}
+
+.manifesto h2 {
+
+    max-width: 850px;
+
+    color: var(--texto);
+
+    font-size: clamp(35px, 5vw, 67px);
+
+    line-height: 1.05;
+
+    font-weight: 400;
+
+    letter-spacing: -2px;
+}
+
+.manifesto .texto {
+
+    max-width: 600px;
+
+    margin-top: 35px;
+
+    color: var(--texto-secundario);
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 21px;
+}
+
+
+/* =========================================================
+   CATEGORIAS
+========================================================= */
+
+.categorias {
+
+    padding: 130px 9vw;
+
+    border-bottom: 1px solid var(--borda);
+}
+
+.cabecalho-secao {
+
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: space-between;
+
+    margin-bottom: 65px;
+}
+
+.cabecalho-secao h2 {
+
+    color: var(--texto);
+
+    font-size: clamp(38px, 5vw, 70px);
+
+    line-height: 0.9;
+
+    font-weight: 400;
+
+    letter-spacing: -2px;
+}
+
+.categorias-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    border-top: 1px solid var(--borda);
+    border-left: 1px solid var(--borda);
+}
+
+.categoria {
+
+    position: relative;
+
+    min-height: 310px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    padding: 35px;
+
+    overflow: hidden;
+
+    border-right: 1px solid var(--borda);
+    border-bottom: 1px solid var(--borda);
+
+    background-color: var(--fundo-card);
+
+    transition:
+        background-color 0.5s ease;
+}
+
+.categoria::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background-color: var(--roxo);
+
+    transform:
+        scaleX(0);
+
+    transform-origin: left;
+
+    transition:
+        transform 0.5s ease,
+        background-color 0.5s ease;
+}
+
+.categoria:hover {
+
+    background-color: #17131d;
+}
+
+.categoria:hover::before {
+
+    transform:
+        scaleX(1);
+}
+
+.categoria-numero {
+
+    position: absolute;
+
+    top: 30px;
+    right: 30px;
+
+    color: var(--texto-fraco);
+
+    font-size: 7px;
+    letter-spacing: 2px;
+}
+
+.categoria h3 {
+
+    color: var(--texto);
+
+    font-size: 31px;
+    font-weight: 500;
+
+    letter-spacing: 2px;
+}
+
+.categoria p {
+
+    max-width: 280px;
+
+    margin-top: 8px;
+
+    color: var(--texto-secundario);
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 18px;
+}
+
+.categoria strong {
+
+    margin-top: 25px;
+
+    color: var(--dourado);
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 7px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   DOSAGEM
+========================================================= */
+
+.dosagem {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    min-height: 650px;
+
+    border-bottom: 1px solid var(--borda);
+}
+
+.dosagem-imagem {
+
+    position: relative;
+
+    min-height: 500px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(139, 95, 191, 0.12),
+            transparent 55%
+        ),
+        linear-gradient(
+            135deg,
+            #100c15,
+            #07060a
+        );
+}
+
+.dosagem-imagem::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border: 1px solid rgba(139, 95, 191, 0.25);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 80px rgba(139, 95, 191, 0.08);
+}
+
+.marcacao {
+
+    position: absolute;
+
+    right: 40px;
+    bottom: 35px;
+
+    display: flex;
+    flex-direction: column;
+
+    text-align: right;
+}
+
+.marcacao span {
+
+    color: var(--texto-fraco);
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 6px;
+    letter-spacing: 2px;
+}
+
+.marcacao strong {
+
+    color: var(--dourado);
+
+    font-size: 22px;
+
+    font-weight: 500;
+}
+
+.dosagem-conteudo {
+
+    padding: 100px 9vw;
+
+    background-color: var(--fundo-secundario);
+}
+
+.dosagem-conteudo h2 {
+
+    margin-top: 20px;
+
+    color: var(--texto);
+
+    font-size: clamp(38px, 5vw, 65px);
+
+    line-height: 0.95;
+
+    font-weight: 400;
+}
+
+.dosagem-conteudo > p {
+
+    max-width: 500px;
+
+    margin-top: 30px;
+
+    color: var(--texto-secundario);
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 20px;
+}
+
+
+/* DURAÇÕES */
+
+.duracoes {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    margin-top: 45px;
+
+    border-top: 1px solid var(--borda);
+    border-bottom: 1px solid var(--borda);
+}
+
+.duracoes div {
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+
+    padding: 18px 10px;
+
+    border-right: 1px solid var(--borda);
+}
+
+.duracoes div:last-child {
+
+    border-right: none;
+}
+
+.duracoes span {
+
+    color: var(--texto-fraco);
+
+    font-size: 7px;
+}
+
+.duracoes strong {
+
+    color: var(--texto);
+
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.duracoes small {
+
+    color: var(--dourado);
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 7px;
+}
+
+
+/* =========================================================
+   LINKS
+========================================================= */
+
+.link {
+
+    display: inline-block;
+
+    margin-top: 35px;
+
+    color: var(--dourado);
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 7px;
+
+    letter-spacing: 2px;
+
+    transition:
+        letter-spacing 0.3s ease;
+}
+
+.link:hover {
+
+    letter-spacing: 3px;
+}
+
+
+/* =========================================================
+   AVISO
+========================================================= */
+
+.aviso {
+
+    display: grid;
+
+    grid-template-columns: 120px 1fr;
+
+    gap: 7vw;
+
+    padding: 130px 12vw;
+
+    background-color: #0c080b;
+
+    border-bottom: 1px solid var(--borda);
+
+    transition:
+        background-color 0.7s ease;
+}
+
+.aviso-numero {
+
+    color: var(--dourado);
+
+    font-family: 'Cinzel', serif;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+}
+
+.aviso-conteudo {
+
+    max-width: 800px;
+}
+
+.aviso-conteudo h2 {
+
+    color: var(--texto);
+
+    font-size: clamp(38px, 5vw, 70px);
+
+    line-height: 0.9;
+
+    font-weight: 400;
+}
+
+.aviso-conteudo > p:not(.etiqueta) {
+
+    max-width: 600px;
+
+    margin-top: 30px;
+
+    color: var(--texto-secundario);
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 21px;
+}
+
+
+/* =========================================================
+   FINAL
+========================================================= */
+
+.final {
+
+    position: relative;
+
+    min-height: 570px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    background-color: var(--fundo);
+}
+
+.final::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 650px;
+    height: 650px;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(139, 95, 191, 0.12),
+            transparent 65%
+        );
+
+    pointer-events: none;
+}
+
+.final > * {
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.final h2 {
+
+    color: var(--texto);
+
+    font-size: clamp(45px, 7vw, 95px);
+
+    line-height: 0.9;
+
+    font-weight: 400;
+
+    letter-spacing: -3px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr auto;
+
+    align-items: end;
+
+    gap: 40px;
+
+    padding: 55px 9vw;
+
+    border-top: 1px solid var(--borda);
+
+    background-color: var(--fundo-secundario);
+}
+
+.footer-logo {
+
+    display: flex;
+    flex-direction: column;
+
+    color: var(--texto);
+
+    font-size: 19px;
+
+    letter-spacing: 5px;
+}
+
+.footer-logo small {
+
+    margin-top: 8px;
+
+    color: var(--texto-fraco);
+
+    font-family: 'Inter', sans-serif;
+
+    font-size: 5px;
+
+    letter-spacing: 2px;
+}
+
+.footer-info p {
+
+    color: var(--texto-fraco);
+
+    font-size: 7px;
+
+    letter-spacing: 1px;
+}
+
+.footer-direitos {
+
+    color: var(--texto-fraco);
+
+    font-size: 6px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   TRANSIÇÕES GERAIS
+========================================================= */
+
+body,
+.topo,
+.manifesto,
+.categoria,
+.dosagem-imagem,
+.dosagem-conteudo,
+.aviso,
+.final,
+footer {
+
+    transition:
+        background-color 0.7s ease,
+        color 0.7s ease,
+        border-color 0.7s ease;
+}
+
+
+/* =========================================================
+   BLOOD PROTOCOL
+========================================================= */
+
+body.modo-sangue {
+
+    --fundo: #090305;
+    --fundo-secundario: #14070a;
+    --fundo-card: #19090c;
+
+    --dourado: #b83a3a;
+    --dourado-claro: #dc6262;
+
+    --roxo: #8f1f2b;
+    --roxo-claro: #c23a47;
+
+    --texto: #f0dfdf;
+    --texto-secundario: #a98f92;
+    --texto-fraco: #684e52;
+
+    --borda: #32171b;
+    --borda-clara: #512127;
+
+    --sombra: rgba(0, 0, 0, 0.7);
+}
+
+
+/* HEADER BLOOD */
+
+body.modo-sangue .topo {
+
+    background-color:
+        rgba(9, 3, 5, 0.90);
+}
+
+
+/* HERO BLOOD */
+
+body.modo-sangue .entrada::before {
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(180, 25, 40, 0.18),
+            transparent 65%
+        );
+}
+
+body.modo-sangue .entrada h1 span {
+
+    animation:
+        sanguePulso 2.5s ease-in-out infinite;
+}
+
+
+/* FRASCO BLOOD */
+
+body.modo-sangue .liquido {
+
+    background:
+        radial-gradient(
+            circle at 40% 30%,
+            rgba(255, 80, 80, 0.8),
+            transparent 30%
+        ),
+        linear-gradient(
+            180deg,
+            #a51f2d,
+            #38070d
+        );
+
+    box-shadow:
+        0 -10px 35px rgba(190, 25, 45, 0.45);
+}
+
+body.modo-sangue .circulo-magico {
+
+    border-color:
+        rgba(190, 35, 50, 0.35);
+}
+
+body.modo-sangue .circulo-magico::before {
+
+    border-color:
+        rgba(170, 35, 45, 0.3);
+}
+
+body.modo-sangue .circulo-magico::after {
+
+    color: #b83a3a;
+}
+
+
+/* CATEGORIAS BLOOD */
+
+body.modo-sangue .categoria::before {
+
+    background-color: #a51f2d;
+}
+
+body.modo-sangue .categoria:hover {
+
+    background-color: #210b0f;
+}
+
+
+/* DOSAGEM BLOOD */
+
+body.modo-sangue .dosagem-imagem {
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(180, 25, 40, 0.13),
+            transparent 55%
+        ),
+        linear-gradient(
+            135deg,
+            #16070a,
+            #080304
+        );
+}
+
+body.modo-sangue .dosagem-imagem::before {
+
+    border-color:
+        rgba(180, 25, 40, 0.25);
+
+    box-shadow:
+        0 0 80px rgba(180, 25, 40, 0.08);
+}
+
+
+/* AVISO BLOOD */
+
+body.modo-sangue .aviso {
+
+    background-color: #160609;
+}
+
+
+/* FINAL BLOOD */
+
+body.modo-sangue .final::before {
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(180, 25, 40, 0.16),
+            transparent 65%
+        );
+}
+
+
+/* BOTÃO BLOOD */
+
+body.modo-sangue .tema-arcana {
+
+    border-color: #8f1f2b;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(180, 25, 40, 0.18),
+            transparent 72%
+        );
+
+    box-shadow:
+        0 0 14px rgba(180, 25, 40, 0.12);
+}
+
+body.modo-sangue .tema-arcana::before,
+body.modo-sangue .tema-arcana::after {
+
+    border-color: #a83232;
+}
+
+body.modo-sangue .tema-runa {
+
+    border-color: #a83232;
+
+    background: #090305;
+
+    color: #d65353;
+
+    box-shadow:
+        0 0 10px rgba(180, 25, 40, 0.22);
+}
+
+body.modo-sangue .tema-nome {
+
+    color: #f0dfdf;
+}
+
+body.modo-sangue .tema-detalhe {
+
+    color: #684e52;
+}
+
+
+/* ANIMAÇÃO BLOOD */
+
+@keyframes sanguePulso {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.65;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .topo {
+
+        padding:
+            0 4vw;
+    }
+
+    .menu {
+
+        gap: 18px;
+    }
+
+    .entrada {
+
+        grid-template-columns:
+            1fr 0.7fr;
+
+        padding-left: 6vw;
+        padding-right: 6vw;
+    }
+
+    .frasco-area {
+
+        transform:
+            scale(0.85);
+    }
+
+    .dados-entrada {
+
+        left: 6vw;
+    }
+
+    .manifesto,
+    .aviso {
+
+        padding-left: 7vw;
+        padding-right: 7vw;
+    }
+
+    .categorias {
+
+        padding-left: 6vw;
+        padding-right: 6vw;
+    }
+
+    .dosagem-conteudo {
+
+        padding-left: 6vw;
+        padding-right: 6vw;
+    }
+
+    footer {
+
+        padding-left: 6vw;
+        padding-right: 6vw;
+    }
+}
+
+
+@media (max-width: 760px) {
+
+    .topo {
+
+        min-height: auto;
+
+        flex-wrap: wrap;
+
+        gap: 25px;
+
+        padding-top: 22px;
+        padding-bottom: 22px;
+    }
+
+    .menu {
+
+        order: 3;
+
+        width: 100%;
+
+        justify-content: center;
+
+        padding-top: 15px;
+
+        border-top:
+            1px solid var(--borda);
+    }
+
+    .controles {
+
+        gap: 15px;
+    }
+
+    .entrada {
+
+        grid-template-columns: 1fr;
+
+        padding-top: 80px;
+        padding-bottom: 120px;
+    }
+
+    .frasco-area {
+
+        height: 470px;
+
+        margin-top: 40px;
+    }
+
+    .circulo-magico {
+
+        width: 340px;
+        height: 340px;
+    }
+
+    .dados-entrada {
+
+        gap: 20px;
+
+        flex-wrap: wrap;
+    }
+
+    .manifesto,
+    .aviso {
+
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+
+    .categorias {
+
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+
+    .cabecalho-secao {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 30px;
+    }
+
+    .categorias-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .dosagem {
+
+        grid-template-columns: 1fr;
+    }
+
+    .dosagem-imagem {
+
+        min-height: 380px;
+    }
+
+    .dosagem-conteudo {
+
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    footer {
+
+        grid-template-columns: 1fr;
+
+        align-items: start;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .logo span {
+
+        font-size: 18px;
+
+        letter-spacing: 4px;
+    }
+
+    .menu {
+
+        gap: 12px;
+    }
+
+    .menu a {
+
+        font-size: 7px;
+
+        letter-spacing: 1px;
+    }
+
+    .tema-arcana {
+
+        width: 74px;
+        height: 48px;
+    }
+
+    .carrinho span {
+
+        display: none;
+    }
+
+    .entrada {
+
+        padding-left: 6vw;
+        padding-right: 6vw;
+    }
+
+    .entrada h1 {
+
+        font-size: 48px;
+
+        letter-spacing: -2px;
+    }
+
+    .frasco-area {
+
+        transform:
+            scale(0.72);
+
+        margin-left: -10%;
+        margin-right: -10%;
+    }
+
+    .dados-entrada {
+
+        position: relative;
+
+        left: auto;
+        bottom: auto;
+
+        margin-top: 20px;
+    }
+
+    .duracoes {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .duracoes div:nth-child(2) {
+
+        border-right: none;
+    }
+
+    .duracoes div:nth-child(-n+2) {
+
+        border-bottom:
+            1px solid var(--borda);
+    }
+
+    .final {
+
+        min-height: 480px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =====================================================
+   ARQUIVO DE POÇÕES
+===================================================== */
+
+.arquivo-hero {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 150px 30px 80px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 60px;
+
+    border-bottom: 1px solid var(--borda);
+}
+
+.arquivo-intro {
+    max-width: 720px;
+}
+
+.etiqueta {
+    display: inline-block;
+    margin-bottom: 25px;
+
+    font-family: "Inter", sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: var(--dourado);
+}
+
+.arquivo-intro h1 {
+    margin: 0;
+
+    font-family: "Cinzel", serif;
+    font-size: clamp(48px, 7vw, 92px);
+    line-height: 0.95;
+    letter-spacing: -2px;
+    font-weight: 600;
+
+    color: var(--texto);
+}
+
+.arquivo-intro h1 span {
+    color: var(--dourado);
+}
+
+.arquivo-intro p {
+    max-width: 540px;
+    margin-top: 35px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 21px;
+    line-height: 1.5;
+
+    color: var(--texto-secundario);
+}
+
+
+/* =====================================================
+   DADOS DO ARQUIVO
+===================================================== */
+
+.arquivo-dados {
+    display: flex;
+    gap: 35px;
+    padding-bottom: 5px;
+}
+
+.arquivo-dados div {
+    min-width: 75px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.arquivo-dados span {
+    font-family: "Inter", sans-serif;
+    font-size: 8px;
+    letter-spacing: 2px;
+
+    color: var(--texto-fraco);
+}
+
+.arquivo-dados strong {
+    font-family: "Cinzel", serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+
+    color: var(--dourado);
+}
+
+
+/* =====================================================
+   AVISO
+===================================================== */
+
+.arquivo-aviso {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 25px 30px;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    border-bottom: 1px solid var(--borda);
+}
+
+.arquivo-aviso > span {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid var(--dourado);
+
+    font-size: 15px;
+    color: var(--dourado);
+}
+
+.arquivo-aviso p {
+    margin: 0;
+
+    font-family: "Inter", sans-serif;
+    font-size: 10px;
+    line-height: 1.7;
+    letter-spacing: 0.5px;
+
+    color: var(--texto-secundario);
+}
+
+.arquivo-aviso strong {
+    margin-right: 12px;
+
+    font-size: 9px;
+    letter-spacing: 2px;
+
+    color: var(--dourado);
+}
+
+
+/* =====================================================
+   FILTROS
+===================================================== */
+
+.arquivo-filtros {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 65px 30px 35px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 30px;
+}
+
+.filtro-titulo {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.filtro-titulo span {
+    font-family: "Inter", sans-serif;
+    font-size: 8px;
+    letter-spacing: 2px;
+
+    color: var(--texto-fraco);
+}
+
+.filtro-titulo strong {
+    font-family: "Cinzel", serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+
+    color: var(--texto);
+}
+
+.filtros-botoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.filtros-botoes button {
+    padding: 11px 16px;
+
+    border: 1px solid var(--borda);
+
+    background: transparent;
+
+    font-family: "Inter", sans-serif;
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+
+    color: var(--texto-fraco);
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.3s ease,
+        color 0.3s ease,
+        background 0.3s ease;
+}
+
+.filtros-botoes button:hover {
+    border-color: var(--dourado);
+    color: var(--dourado);
+}
+
+.filtros-botoes .filtro-ativo {
+    border-color: var(--dourado);
+
+    background: var(--dourado);
+
+    color: var(--fundo);
+}
+
+
+/* =====================================================
+   CATÁLOGO
+===================================================== */
+
+.arquivo-catalogo {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 30px 100px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+
+/* =====================================================
+   CARD DA POÇÃO
+===================================================== */
+
+.pocao-card {
+    min-height: 580px;
+
+    display: grid;
+    grid-template-columns: 42% 58%;
+
+    border: 1px solid var(--borda);
+
+    background: var(--fundo-card);
+
+    transition:
+        border-color 0.35s ease,
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+
+    overflow: hidden;
+}
+
+.pocao-card:hover {
+    transform: translateY(-4px);
+
+    border-color: var(--borda-clara);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =====================================================
+   ÁREA VISUAL DA POÇÃO
+===================================================== */
+
+.pocao-visual {
+    position: relative;
+
+    min-height: 580px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(105, 55, 145, 0.12),
+            transparent 55%
+        );
+
+    border-right: 1px solid var(--borda);
+}
+
+.pocao-visual::before {
+    content: "";
+
+    position: absolute;
+
+    width: 210px;
+    height: 210px;
+
+    border: 1px solid rgba(155, 100, 190, 0.18);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 0 18px rgba(155, 100, 190, 0.025),
+        0 0 0 38px rgba(155, 100, 190, 0.018);
+
+    transform: rotate(45deg);
+}
+
+.pocao-visual::after {
+    content: "✦";
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    font-size: 145px;
+
+    color: rgba(180, 130, 210, 0.025);
+
+    pointer-events: none;
+}
+
+.pocao-codigo {
+    position: absolute;
+
+    top: 20px;
+    left: 20px;
+
+    font-family: "Inter", sans-serif;
+    font-size: 8px;
+    letter-spacing: 2px;
+
+    color: var(--texto-fraco);
+}
+
+.pocao-classificacao {
+    position: absolute;
+
+    right: 18px;
+    bottom: 18px;
+
+    writing-mode: vertical-rl;
+
+    font-family: "Inter", sans-serif;
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 2px;
+
+    color: var(--dourado);
+}
+
+
+/* =====================================================
+   FRASCO
+===================================================== */
+
+.pocao-fraco {
+    position: relative;
+
+    width: 100px;
+    height: 190px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    z-index: 2;
+
+    filter:
+        drop-shadow(
+            0 0 25px
+            rgba(145, 70, 190, 0.25)
+        );
+}
+
+.pocao-vidro {
+    position: absolute;
+
+    bottom: 0;
+
+    width: 82px;
+    height: 135px;
+
+    border: 1px solid rgba(220, 190, 235, 0.45);
+
+    border-radius: 18px 18px 28px 28px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.05),
+            rgba(255,255,255,0.01) 40%,
+            rgba(255,255,255,0.04)
+        );
+
+    box-shadow:
+        inset 8px 0 15px rgba(255,255,255,0.03),
+        inset -8px 0 15px rgba(0,0,0,0.15);
+}
+
+.pocao-vidro::before {
+    content: "";
+
+    position: absolute;
+
+    top: -43px;
+    left: 24px;
+
+    width: 32px;
+    height: 48px;
+
+    border: 1px solid rgba(220, 190, 235, 0.45);
+
+    border-bottom: none;
+
+    background: rgba(255,255,255,0.015);
+}
+
+.pocao-vidro::after {
+    content: "";
+
+    position: absolute;
+
+    top: -49px;
+    left: 20px;
+
+    width: 40px;
+    height: 10px;
+
+    border: 1px solid rgba(220, 190, 235, 0.5);
+
+    background: var(--fundo-card);
+}
+
+.pocao-gota {
+    position: absolute;
+
+    bottom: 8px;
+
+    width: 70px;
+    height: 85px;
+
+    border-radius: 10px 10px 23px 23px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(147, 79, 193, 0.8),
+            rgba(72, 26, 106, 0.95)
+        );
+
+    box-shadow:
+        0 0 30px rgba(130, 65, 180, 0.3);
+}
+
+
+/* =====================================================
+   VARIAÇÕES DAS POÇÕES
+===================================================== */
+
+.pocao-azul {
+    filter:
+        drop-shadow(
+            0 0 25px
+            rgba(50, 110, 190, 0.25)
+        );
+}
+
+.pocao-azul .pocao-gota {
+    background:
+        linear-gradient(
+            180deg,
+            rgba(68, 135, 200, 0.85),
+            rgba(25, 55, 105, 0.95)
+        );
+
+    box-shadow:
+        0 0 30px rgba(55, 120, 200, 0.3);
+}
+
+.pocao-roxo .pocao-gota {
+    background:
+        linear-gradient(
+            180deg,
+            rgba(160, 85, 210, 0.85),
+            rgba(70, 30, 115, 0.95)
+        );
+}
+
+.pocao-vermelho {
+    filter:
+        drop-shadow(
+            0 0 25px
+            rgba(180, 45, 55, 0.25)
+        );
+}
+
+.pocao-vermelho .pocao-gota {
+    background:
+        linear-gradient(
+            180deg,
+            rgba(195, 60, 70, 0.85),
+            rgba(85, 20, 28, 0.95)
+        );
+
+    box-shadow:
+        0 0 30px rgba(190, 50, 65, 0.3);
+}
+
+
+/* =====================================================
+   INFORMAÇÕES
+===================================================== */
+
+.pocao-info {
+    padding: 35px 30px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.pocao-numero {
+    font-family: "Inter", sans-serif;
+    font-size: 8px;
+    letter-spacing: 2px;
+
+    color: var(--dourado);
+}
+
+.pocao-info h2 {
+    margin: 12px 0 15px;
+
+    font-family: "Cinzel", serif;
+    font-size: 27px;
+    line-height: 1.15;
+
+    color: var(--texto);
+}
+
+.pocao-descricao {
+    margin: 0;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 18px;
+    line-height: 1.45;
+
+    color: var(--texto-secundario);
+}
+
+
+/* =====================================================
+   DETALHES
+===================================================== */
+
+.pocao-detalhes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    margin-top: 30px;
+
+    border-top: 1px solid var(--borda);
+    border-bottom: 1px solid var(--borda);
+}
+
+.pocao-detalhes div {
+    padding: 16px 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.pocao-detalhes div + div {
+    padding-left: 18px;
+
+    border-left: 1px solid var(--borda);
+}
+
+.pocao-detalhes span {
+    font-family: "Inter", sans-serif;
+    font-size: 7px;
+    letter-spacing: 1.5px;
+
+    color: var(--texto-fraco);
+}
+
+.pocao-detalhes strong {
+    font-family: "Inter", sans-serif;
+    font-size: 10px;
+    letter-spacing: 1px;
+
+    color: var(--texto);
+}
+
+
+/* =====================================================
+   EFEITO COLATERAL
+===================================================== */
+
+.pocao-alerta {
+    margin-top: 22px;
+    padding: 15px;
+
+    border-left: 1px solid var(--dourado);
+
+    background: rgba(255, 255, 255, 0.015);
+}
+
+.pocao-alerta span {
+    font-family: "Inter", sans-serif;
+    font-size: 7px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+
+    color: var(--dourado);
+}
+
+.pocao-alerta p {
+    margin: 7px 0 0;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 16px;
+    line-height: 1.35;
+
+    color: var(--texto-secundario);
+}
+
+
+/* =====================================================
+   PREÇO / BOTÃO
+===================================================== */
+
+.pocao-compra {
+    margin-top: auto;
+    padding-top: 25px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 15px;
+}
+
+.pocao-compra strong {
+    font-family: "Cinzel", serif;
+    font-size: 22px;
+
+    color: var(--texto);
+}
+
+.pocao-compra a {
+    padding: 12px 14px;
+
+    border: 1px solid var(--borda-clara);
+
+    font-family: "Inter", sans-serif;
+    font-size: 7px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+
+    color: var(--dourado);
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.pocao-compra a:hover {
+    border-color: var(--dourado);
+
+    background: var(--dourado);
+
+    color: var(--fundo);
+}
+
+
+/* =====================================================
+   FINAL DO ARQUIVO
+===================================================== */
+
+.arquivo-final {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    padding: 90px 30px 120px;
+
+    border-top: 1px solid var(--borda);
+
+    text-align: center;
+}
+
+.arquivo-final > span {
+    font-family: "Inter", sans-serif;
+    font-size: 8px;
+    letter-spacing: 2px;
+
+    color: var(--texto-fraco);
+}
+
+.arquivo-final h2 {
+    margin: 25px 0 15px;
+
+    font-family: "Cinzel", serif;
+    font-size: clamp(30px, 4vw, 52px);
+    line-height: 1.1;
+
+    color: var(--texto);
+}
+
+.arquivo-final p {
+    margin: 0;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 19px;
+
+    color: var(--texto-secundario);
+}
+
+
+/* =====================================================
+   BLOOD PROTOCOL
+   Atmosfera vermelha sem alterar a identidade
+   individual das poções
+===================================================== */
+
+body.modo-sangue .pocao-visual {
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(150, 25, 40, 0.13),
+            transparent 55%
+        );
+}
+
+body.modo-sangue .pocao-visual::before {
+    border-color: rgba(170, 45, 55, 0.16);
+}
+
+body.modo-sangue .pocao-visual::after {
+    color: rgba(190, 50, 60, 0.025);
+}
+
+
+/* =====================================================
+   TITAN'S BLOOD
+   Continua ROXA no Blood Protocol
+===================================================== */
+
+body.modo-sangue .pocao-fraco:not(.pocao-azul):not(.pocao-roxo):not(.pocao-vermelho) {
+    filter:
+        drop-shadow(
+            0 0 25px
+            rgba(145, 70, 190, 0.28)
+        );
+}
+
+body.modo-sangue .pocao-fraco:not(.pocao-azul):not(.pocao-roxo):not(.pocao-vermelho) .pocao-gota {
+    background:
+        linear-gradient(
+            180deg,
+            rgba(147, 79, 193, 0.85),
+            rgba(72, 26, 106, 0.95)
+        );
+
+    box-shadow:
+        0 0 30px
+        rgba(130, 65, 180, 0.32);
+}
+
+
+/* =====================================================
+   MERCURY RUSH
+   Continua AZUL no Blood Protocol
+===================================================== */
+
+body.modo-sangue .pocao-fraco.pocao-azul {
+    filter:
+        drop-shadow(
+            0 0 25px
+            rgba(50, 110, 190, 0.28)
+        );
+}
+
+body.modo-sangue .pocao-fraco.pocao-azul .pocao-gota {
+    background:
+        linear-gradient(
+            180deg,
+            rgba(68, 135, 200, 0.85),
+            rgba(25, 55, 105, 0.95)
+        );
+
+    box-shadow:
+        0 0 30px
+        rgba(55, 120, 200, 0.32);
+}
+
+
+/* =====================================================
+   AETHER WING
+   Continua VIOLETA no Blood Protocol
+===================================================== */
+
+body.modo-sangue .pocao-fraco.pocao-roxo {
+    filter:
+        drop-shadow(
+            0 0 25px
+            rgba(160, 85, 210, 0.28)
+        );
+}
+
+body.modo-sangue .pocao-fraco.pocao-roxo .pocao-gota {
+    background:
+        linear-gradient(
+            180deg,
+            rgba(160, 85, 210, 0.85),
+            rgba(70, 30, 115, 0.95)
+        );
+
+    box-shadow:
+        0 0 30px
+        rgba(140, 70, 195, 0.32);
+}
+
+
+/* =====================================================
+   VOID VEIL
+   Continua VERMELHA no Blood Protocol
+===================================================== */
+
+body.modo-sangue .pocao-fraco.pocao-vermelho {
+    filter:
+        drop-shadow(
+            0 0 28px
+            rgba(190, 45, 60, 0.35)
+        );
+}
+
+body.modo-sangue .pocao-fraco.pocao-vermelho .pocao-gota {
+    background:
+        linear-gradient(
+            180deg,
+            rgba(195, 60, 70, 0.85),
+            rgba(85, 20, 28, 0.95)
+        );
+
+    box-shadow:
+        0 0 32px
+        rgba(190, 50, 65, 0.35);
+}
+
+
+/* =====================================================
+   RESPONSIVIDADE
+===================================================== */
+
+@media (max-width: 1000px) {
+
+    .arquivo-hero {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .arquivo-dados {
+        padding-top: 10px;
+    }
+
+    .arquivo-catalogo {
+        grid-template-columns: 1fr;
+    }
+
+    .pocao-card {
+        min-height: 500px;
+    }
+
+    .pocao-visual {
+        min-height: 500px;
+    }
+}
+
+
+@media (max-width: 760px) {
+
+    .arquivo-hero {
+        padding-top: 120px;
+    }
+
+    .arquivo-filtros {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .pocao-card {
+        grid-template-columns: 1fr;
+    }
+
+    .pocao-visual {
+        min-height: 360px;
+
+        border-right: none;
+        border-bottom: 1px solid var(--borda);
+    }
+
+    .pocao-info {
+        min-height: 450px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .arquivo-hero,
+    .arquivo-aviso,
+    .arquivo-filtros,
+    .arquivo-catalogo,
+    .arquivo-final {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .arquivo-intro h1 {
+        font-size: 43px;
+    }
+
+    .arquivo-dados {
+        width: 100%;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .filtros-botoes {
+        width: 100%;
+    }
+
+    .filtros-botoes button {
+        flex: 1;
+    }
+
+    .pocao-info {
+        padding: 30px 22px;
+    }
+
+    .pocao-compra {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .pocao-compra a {
+        width: 100%;
+        text-align: center;
+    }
+
+}
