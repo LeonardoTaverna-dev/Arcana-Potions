@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Arcana Potions: um universo fictício de poções mágicas. Projeto escolar de desenvolvimento web.">
+    <meta name="theme-color" content="#0c0d0c">
+    <title>
+      Sua bolsa | Arcana Potions
+    </title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/theme.js">
+    </script>
+    <script src="../js/data.js" defer>
+    </script>
+    <script src="../js/script.js" defer>
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">
+      Pular para o conteúdo
+    </a>
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="Arcana Potions — início">
+        <span class="brand-mark" aria-hidden="true">
+          ✧
+        </span>
+        <span>
+          ARCANA
+          <small>
+            POTIONS & CURIOSITIES
+          </small>
+        </span>
+      </a>
+      <nav aria-label="Navegação principal">
+        <a href="../pages/pocoes.html" >
+          Arquivo
+        </a>
+        <a href="../pages/como-funciona.html" >
+          Alquimia
+        </a>
+        <a href="../pages/grimorio.html" >
+          Grimório
+        </a>
+        <a href="../pages/sobre.html" >
+          A Arcana
+        </a>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-button" id="temaBtn" type="button" aria-label="Ativar tema Eclipse" aria-pressed="false">
+          <span aria-hidden="true">
+            ☾
+          </span>
+          <span id="temaTexto">
+            Noturno
+          </span>
+        </button>
+        <a class="bag-link" href="../pages/carrinho.html" aria-label="Bolsa de poções">
+          Bolsa
+          <span data-bag-count>
+            0
+          </span>
+        </a>
+      </div>
+    </header>
+    <main id="conteudo">
+      <section class="page-intro">
+        <p class="eyebrow">
+          ARCANA / Sua coleção
+        </p>
+        <h1>
+          Pequenos frascos.
+          <br>
+          Grandes
+          <em>
+            possibilidades.
+          </em>
+        </h1>
+        <p>
+          Sua seleção fica guardada neste navegador. Esta é uma experiência fictícia.
+        </p>
+      </section>
+      <section class="section bag-section">
+        <div id="bag-content">
+          <noscript>
+            Ative o JavaScript para usar a bolsa de simulação.
+          </noscript>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div>
+        <a class="brand" href="../index.html">
+          ✧ ARCANA
+        </a>
+        <p>
+          O extraordinário tem seu preço.
+          <br>
+          A imaginação, não.
+        </p>
+      </div>
+      <div>
+        <span class="eyebrow">
+          Um universo imaginário
+        </span>
+        <p>
+          Projeto escolar de HTML, CSS e JavaScript.
+          <br>
+          Poções, efeitos e valores são fictícios.
+          <br>
+          Nenhuma compra ou pagamento é realizado.
+        </p>
+      </div>
+      <span class="footer-end">
+        FEITO DE CÓDIGO & MISTÉRIO
+        <br>
+        © 2026 ARCANA POTIONS
+      </span>
+    </footer>
+    <div class="toast" id="toast" role="status" aria-live="polite">
+    </div>
+  </body>
+</html>

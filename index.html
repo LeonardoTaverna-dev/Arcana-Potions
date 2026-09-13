@@ -1,794 +1,546 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
-<head>
-
+  <head>
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>Arcana Potions — Extraordinary Alchemy</title>
-
-    <link
-        rel="stylesheet"
-        href="css/style.css"
-    >
-
-</head>
-
-
-<body>
-
-
-    <!-- =====================================================
-         CABEÇALHO
-    ====================================================== -->
-
-    <header class="topo">
-
-
-        <!-- LOGO -->
-
-        <a href="index.html" class="logo">
-
-            <span>ARCANA</span>
-
-            <small>
-                EXTRAORDINARY ALCHEMY
-            </small>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Arcana Potions: um universo fictício de poções mágicas. Projeto escolar de desenvolvimento web.">
+    <meta name="theme-color" content="#0c0d0c">
+    <title>
+      Botica de artes arcanas | Arcana Potions
+    </title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/theme.js">
+    </script>
+    <script src="js/data.js" defer>
+    </script>
+    <script src="js/script.js" defer>
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">
+      Pular para o conteúdo
+    </a>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Arcana Potions — início">
+        <span class="brand-mark" aria-hidden="true">
+          ✧
+        </span>
+        <span>
+          ARCANA
+          <small>
+            POTIONS & CURIOSITIES
+          </small>
+        </span>
+      </a>
+      <nav aria-label="Navegação principal">
+        <a href="pages/pocoes.html" >
+          Arquivo
         </a>
-
-
-        <!-- MENU -->
-
-        <nav class="menu">
-
-            <a href="pages/pocoes.html">
-                Arquivo
-            </a>
-
-            <a href="pages/como-funciona.html">
-                Alquimia
-            </a>
-
-            <a href="pages/grimorio.html">
-                Grimório
-            </a>
-
-            <a href="pages/sobre.html">
-                Arcana
-            </a>
-
-        </nav>
-
-
-        <!-- CONTROLES -->
-
-        <div class="controles">
-
-
-            <!-- BOTÃO DE PROTOCOLO -->
-
-            <button
-                id="temaBtn"
-                class="tema-arcana"
-                aria-label="Alterar protocolo"
-            >
-
-                <span
-                    class="tema-runa"
-                    id="temaIcone"
-                >
-                    ☾
-                </span>
-
-                <span
-                    class="tema-nome"
-                    id="temaTexto"
-                >
-                    NIGHT
-                </span>
-
-                <span class="tema-detalhe">
-                    PROTOCOL
-                </span>
-
-            </button>
-
-
-            <!-- CARRINHO -->
-
-            <a
-                href="pages/carrinho.html"
-                class="carrinho"
-            >
-
-                <span>
-                    Bag
-                </span>
-
-                <strong>
-                    00
-                </strong>
-
-            </a>
-
-        </div>
-
+        <a href="pages/como-funciona.html" >
+          Alquimia
+        </a>
+        <a href="pages/grimorio.html" >
+          Grimório
+        </a>
+        <a href="pages/sobre.html" >
+          A Arcana
+        </a>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-button" id="temaBtn" type="button" aria-label="Ativar tema Eclipse" aria-pressed="false">
+          <span aria-hidden="true">
+            ☾
+          </span>
+          <span id="temaTexto">
+            Noturno
+          </span>
+        </button>
+        <a class="bag-link" href="pages/carrinho.html" aria-label="Bolsa de poções">
+          Bolsa
+          <span data-bag-count>
+            0
+          </span>
+        </a>
+      </div>
     </header>
-
-
-
-    <!-- =====================================================
-         HERO / ENTRADA
-    ====================================================== -->
-
-    <main>
-
-
-        <section class="entrada">
-
-
-            <!-- TEXTO -->
-
-            <div class="entrada-conteudo">
-
-
-                <div class="codigo">
-
-                    <span>
-                        ARCANA DEPARTMENT
-                    </span>
-
-                    <span>
-                        FILE 001
-                    </span>
-
-                </div>
-
-
-                <h1>
-
-                    EXTRAORDINARY
-
-                    <span>
-                        ALCHEMY.
-                    </span>
-
-                </h1>
-
-
-                <p class="frase">
-
-                    Um poder extraordinário.
-                    <em>
-                        Por tempo limitado.
-                    </em>
-
-                </p>
-
-
-                <a
-                    href="pages/pocoes.html"
-                    class="botao-principal"
-                >
-
-                    EXPLORE THE ARCHIVE
-
-                    <span>
-                        ↗
-                    </span>
-
-                </a>
-
-            </div>
-
-
-
-            <!-- FRASCO -->
-
-            <div class="frasco-area">
-
-
-                <div class="circulo-magico">
-
-                    <span>
-                        ARCANA • ALCHEMY • ARCANA
-                    </span>
-
-                </div>
-
-
-                <div class="frasco">
-
-
-                    <div class="frasco-tampa"></div>
-
-
-                    <div class="frasco-corpo">
-
-                        <div class="liquido"></div>
-
-                        <div class="simbolo">
-                            ✦
-                        </div>
-
-                    </div>
-
-
-                    <div class="informacao-frasco">
-
-                        <span>
-                            CLASS
-                        </span>
-
-                        <strong>
-                            UNKNOWN
-                        </strong>
-
-                        <span>
-                            STATUS
-                        </span>
-
-                        <strong>
-                            STABLE
-                        </strong>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- DADOS -->
-
-            <div class="dados-entrada">
-
-
-                <div>
-
-                    <span>
-                        DEPARTMENT
-                    </span>
-
-                    <strong>
-                        ARCANA
-                    </strong>
-
-                </div>
-
-
-                <div>
-
-                    <span>
-                        ACCESS
-                    </span>
-
-                    <strong>
-                        RESTRICTED
-                    </strong>
-
-                </div>
-
-
-                <div>
-
-                    <span>
-                        STATUS
-                    </span>
-
-                    <strong>
-                        EXPERIMENTAL
-                    </strong>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =================================================
-             MANIFESTO
-        ================================================== -->
-
-        <section class="manifesto">
-
-
-            <div>
-
-                <span class="numero">
-                    01
-                </span>
-
-            </div>
-
-
-            <div>
-
-                <p class="etiqueta">
-                    THE ARCANA PHILOSOPHY
-                </p>
-
-
-                <h2>
-
-                    Poder não é
-                    <em>
-                        permanente.
-                    </em>
-
-                </h2>
-
-
-                <p class="texto">
-
-                    A Arcana desenvolve compostos alquímicos
-                    capazes de alterar temporariamente as
-                    capacidades humanas.
-
-                    <br><br>
-
-                    Força. Velocidade. Invisibilidade.
-                    Voo.
-
-                    <br><br>
-
-                    Cada fórmula possui uma duração,
-                    uma dosagem e um preço.
-
-                </p>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =================================================
-             CATEGORIAS
-        ================================================== -->
-
-        <section class="categorias">
-
-
-            <div class="cabecalho-secao">
-
-
-                <div>
-
-                    <p class="etiqueta">
-                        CLASSIFICATION
-                    </p>
-
-                    <h2>
-                        ARQUIVO
-                    </h2>
-
-                </div>
-
-
-                <a
-                    href="pages/pocoes.html"
-                    class="link"
-                >
-                    VIEW COMPLETE ARCHIVE →
-                </a>
-
-            </div>
-
-
-
-            <div class="categorias-grid">
-
-
-                <!-- FORÇA -->
-
-                <a
-                    href="pages/pocoes.html"
-                    class="categoria"
-                >
-
-                    <span class="categoria-numero">
-                        001
-                    </span>
-
-                    <h3>
-                        FORÇA
-                    </h3>
-
-                    <p>
-                        Amplificação temporária da
-                        capacidade física.
-                    </p>
-
-                    <strong>
-                        CLASS — PHYSICAL
-                    </strong>
-
-                </a>
-
-
-                <!-- VOO -->
-
-                <a
-                    href="pages/pocoes.html"
-                    class="categoria"
-                >
-
-                    <span class="categoria-numero">
-                        002
-                    </span>
-
-                    <h3>
-                        VOO
-                    </h3>
-
-                    <p>
-                        Redução da gravidade e
-                        suspensão corporal.
-                    </p>
-
-                    <strong>
-                        CLASS — AERIAL
-                    </strong>
-
-                </a>
-
-
-                <!-- INVISIBILIDADE -->
-
-                <a
-                    href="pages/pocoes.html"
-                    class="categoria"
-                >
-
-                    <span class="categoria-numero">
-                        003
-                    </span>
-
-                    <h3>
-                        INVISIBILIDADE
-                    </h3>
-
-                    <p>
-                        Refração óptica avançada
-                        durante o efeito.
-                    </p>
-
-                    <strong>
-                        CLASS — OPTICAL
-                    </strong>
-
-                </a>
-
-
-                <!-- VELOCIDADE -->
-
-                <a
-                    href="pages/pocoes.html"
-                    class="categoria"
-                >
-
-                    <span class="categoria-numero">
-                        004
-                    </span>
-
-                    <h3>
-                        VELOCIDADE
-                    </h3>
-
-                    <p>
-                        Aumento temporário da
-                        velocidade de reação.
-                    </p>
-
-                    <strong>
-                        CLASS — KINETIC
-                    </strong>
-
-                </a>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =================================================
-             DOSAGEM
-        ================================================== -->
-
-        <section class="dosagem">
-
-
-            <div class="dosagem-imagem">
-
-                <div class="marcacao">
-
-                    <span>
-                        EXPERIMENTAL FORMULA
-                    </span>
-
-                    <strong>
-                        ARC-07
-                    </strong>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="dosagem-conteudo">
-
-
-                <p class="etiqueta">
-                    DURATION PROTOCOL
-                </p>
-
-
-                <h2>
-                    Quanto maior
-                    o tempo,
-                    maior a
-                    <em>
-                        dosagem.
-                    </em>
-                </h2>
-
-
-                <p>
-
-                    As fórmulas Arcana são disponibilizadas
-                    em diferentes concentrações.
-
-                    Quanto maior a concentração,
-                    maior o período de manifestação
-                    do efeito.
-
-                </p>
-
-
-
-                <div class="duracoes">
-
-
-                    <div>
-
-                        <span>
-                            01H
-                        </span>
-
-                        <strong>
-                            R$ 149
-                        </strong>
-
-                        <small>
-                            ENTRY
-                        </small>
-
-                    </div>
-
-
-                    <div>
-
-                        <span>
-                            03H
-                        </span>
-
-                        <strong>
-                            R$ 229
-                        </strong>
-
-                        <small>
-                            STANDARD
-                        </small>
-
-                    </div>
-
-
-                    <div>
-
-                        <span>
-                            06H
-                        </span>
-
-                        <strong>
-                            R$ 349
-                        </strong>
-
-                        <small>
-                            ADVANCED
-                        </small>
-
-                    </div>
-
-
-                    <div>
-
-                        <span>
-                            12H
-                        </span>
-
-                        <strong>
-                            R$ 549
-                        </strong>
-
-                        <small>
-                            EXTREME
-                        </small>
-
-                    </div>
-
-                </div>
-
-
-                <a
-                    href="pages/pocoes.html"
-                    class="link"
-                >
-                    CONSULT ALL FORMULAS →
-                </a>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =================================================
-             AVISO
-        ================================================== -->
-
-        <section class="aviso">
-
-
-            <div>
-
-                <span class="aviso-numero">
-                    02
-                </span>
-
-            </div>
-
-
-            <div class="aviso-conteudo">
-
-
-                <p class="etiqueta">
-                    IMPORTANT NOTICE
-                </p>
-
-
-                <h2>
-                    Todo poder
-                    tem um
-                    <em>
-                        efeito colateral.
-                    </em>
-                </h2>
-
-
-                <p>
-
-                    Cada poção possui efeitos,
-                    limitações e possíveis reações
-                    descritas em sua ficha experimental.
-
-                    <br><br>
-
-                    Consulte sempre as informações
-                    antes de selecionar uma fórmula.
-
-                </p>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =================================================
-             CTA FINAL
-        ================================================== -->
-
-        <section class="final">
-
-
-            <p class="etiqueta">
-                ARCANA ARCHIVE
+    <main id="conteudo">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">
+            <span class="tiny-star">
+              ✦
+            </span>
+            Botica de artes arcanas · Est. 1693
+          </p>
+          <h1>
+            Há poderes
+            <br>
+            que não deveriam
+            <br>
+            ser
+            <em>
+              despertados.
+            </em>
+          </h1>
+          <p class="hero-description">
+            Essências raras. Encantamentos passageiros.
+            <br>
+            Descubra o que se esconde além do ordinário.
+          </p>
+          <a class="button" href="pages/pocoes.html">
+            Explorar as poções
+            <span>
+              ↗
+            </span>
+          </a>
+          <div class="hero-note">
+            <span class="seal">
+              A
+            </span>
+            <p>
+              Preparadas à luz da lua.
+              <br>
+              Guardadas entre o possível e o proibido.
             </p>
-
-
-            <h2>
-
-                Descubra
-                seu
-                <em>
-                    poder.
-                </em>
-
-            </h2>
-
-
-            <a
-                href="pages/pocoes.html"
-                class="botao-principal"
-            >
-
-                ENTER THE ARCHIVE
-
-                <span>
-                    ↗
-                </span>
-
-            </a>
-
-        </section>
-
-    </main>
-
-
-
-    <!-- =====================================================
-         FOOTER
-    ====================================================== -->
-
-    <footer>
-
-
-        <div class="footer-logo">
-
-            ARCANA
-
+          </div>
+        </div>
+        <div class="hero-visual">
+          <span class="vertical-note">
+            FIG. 003 — ESSÊNCIA DO ÉTER
+          </span>
+          <div class="specimen specimen-large" style="--potion:#ad8bd6" aria-hidden="true">
+            <div class="orbit orbit-one">
+            </div>
+            <div class="orbit orbit-two">
+            </div>
+            <span class="orbit-star">
+              ✧
+            </span>
+            <div class="bottle">
+              <div class="bottle-cork">
+              </div>
+              <div class="bottle-neck">
+              </div>
+              <div class="bottle-glass">
+                <div class="bottle-liquid">
+                </div>
+                <div class="bottle-label">
+                  <span>
+                    ARCANA
+                  </span>
+                  <b>
+                    ✦
+                  </b>
+                  <small>
+                    NO. 03
+                  </small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="specimen-caption">
+            <span>
+              COLEÇÃO PERMANENTE
+            </span>
+            <strong>
+              Aether Wing
+            </strong>
             <small>
-                EXTRAORDINARY ALCHEMY
+              Um fragmento do céu. Sob vidro.
             </small>
-
+          </div>
         </div>
-
-
-        <div class="footer-info">
-
-            <p>
-                PROJETO FICTÍCIO E EDUCACIONAL.
-            </p>
-
-            <p>
-                NENHUMA POÇÃO É REAL.
-            </p>
-
-            <p>
-                NENHUMA COMPRA OU PAGAMENTO É REALIZADO.
-            </p>
-
+        <div class="hero-bottom">
+          <span>
+            QUATRO FÓRMULAS. INFINITAS POSSIBILIDADES.
+          </span>
+          <a href="#colecao">
+            Desça para descobrir ↓
+          </a>
         </div>
-
-
-        <div class="footer-direitos">
-
-            ARCANA POTIONS © 2026
-
+      </section>
+      <div class="ribbon" aria-hidden="true">
+        <span>
+          ✧ Essências extraordinárias
+        </span>
+        <span>
+          ✧ Alquimia ancestral
+        </span>
+        <span>
+          ✧ Poder por tempo limitado
+        </span>
+      </div>
+      <section class="section" id="colecao">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">
+              01 / O arquivo
+            </p>
+            <h2>
+              Escolha seu
+              <em>
+                impossível.
+              </em>
+            </h2>
+          </div>
+          <a class="text-link" href="pages/pocoes.html">
+            Ver coleção completa ↗
+          </a>
         </div>
-
+        <div class="potion-grid">
+          <article class="potion-card" data-category="forca">
+            <a class="potion-art" href="pages/produto.html?id=titan" aria-label="Conhecer Titan’s Blood">
+              <span class="art-code">
+                AP / 01
+              </span>
+              <div class="specimen " style="--potion:#b56380" aria-hidden="true">
+                <div class="orbit orbit-one">
+                </div>
+                <div class="orbit orbit-two">
+                </div>
+                <span class="orbit-star">
+                  ✧
+                </span>
+                <div class="bottle">
+                  <div class="bottle-cork">
+                  </div>
+                  <div class="bottle-neck">
+                  </div>
+                  <div class="bottle-glass">
+                    <div class="bottle-liquid">
+                    </div>
+                    <div class="bottle-label">
+                      <span>
+                        ARCANA
+                      </span>
+                      <b>
+                        ✦
+                      </b>
+                      <small>
+                        NO. 01
+                      </small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <span class="art-category">
+                Força
+              </span>
+            </a>
+            <div class="potion-copy">
+              <div class="eyebrow">
+                Fórmula 01
+                <span>
+                  01 h
+                </span>
+              </div>
+              <h3>
+                <a href="pages/produto.html?id=titan">
+                  Titan’s Blood
+                </a>
+              </h3>
+              <p>
+                A força dos antigos titãs, selada em um frasco. Para mover aquilo que parecia impossível.
+              </p>
+              <div class="card-bottom">
+                <span>
+                  R$ 149
+                  <small>
+                    valor fictício
+                  </small>
+                </span>
+                <a class="round-link" href="pages/produto.html?id=titan" aria-label="Consultar Titan’s Blood">
+                  ↗
+                </a>
+              </div>
+            </div>
+          </article>
+          <article class="potion-card" data-category="velocidade">
+            <a class="potion-art" href="pages/produto.html?id=mercury" aria-label="Conhecer Mercury Rush">
+              <span class="art-code">
+                AP / 02
+              </span>
+              <div class="specimen " style="--potion:#72b5c3" aria-hidden="true">
+                <div class="orbit orbit-one">
+                </div>
+                <div class="orbit orbit-two">
+                </div>
+                <span class="orbit-star">
+                  ✧
+                </span>
+                <div class="bottle">
+                  <div class="bottle-cork">
+                  </div>
+                  <div class="bottle-neck">
+                  </div>
+                  <div class="bottle-glass">
+                    <div class="bottle-liquid">
+                    </div>
+                    <div class="bottle-label">
+                      <span>
+                        ARCANA
+                      </span>
+                      <b>
+                        ✦
+                      </b>
+                      <small>
+                        NO. 02
+                      </small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <span class="art-category">
+                Velocidade
+              </span>
+            </a>
+            <div class="potion-copy">
+              <div class="eyebrow">
+                Fórmula 02
+                <span>
+                  03 h
+                </span>
+              </div>
+              <h3>
+                <a href="pages/produto.html?id=mercury">
+                  Mercury Rush
+                </a>
+              </h3>
+              <p>
+                O mundo desacelera. Seus passos, não. Um instante suspenso entre o agora e o impossível.
+              </p>
+              <div class="card-bottom">
+                <span>
+                  R$ 229
+                  <small>
+                    valor fictício
+                  </small>
+                </span>
+                <a class="round-link" href="pages/produto.html?id=mercury" aria-label="Consultar Mercury Rush">
+                  ↗
+                </a>
+              </div>
+            </div>
+          </article>
+          <article class="potion-card" data-category="voo">
+            <a class="potion-art" href="pages/produto.html?id=aether" aria-label="Conhecer Aether Wing">
+              <span class="art-code">
+                AP / 03
+              </span>
+              <div class="specimen " style="--potion:#ad8bd6" aria-hidden="true">
+                <div class="orbit orbit-one">
+                </div>
+                <div class="orbit orbit-two">
+                </div>
+                <span class="orbit-star">
+                  ✧
+                </span>
+                <div class="bottle">
+                  <div class="bottle-cork">
+                  </div>
+                  <div class="bottle-neck">
+                  </div>
+                  <div class="bottle-glass">
+                    <div class="bottle-liquid">
+                    </div>
+                    <div class="bottle-label">
+                      <span>
+                        ARCANA
+                      </span>
+                      <b>
+                        ✦
+                      </b>
+                      <small>
+                        NO. 03
+                      </small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <span class="art-category">
+                Voo
+              </span>
+            </a>
+            <div class="potion-copy">
+              <div class="eyebrow">
+                Fórmula 03
+                <span>
+                  06 h
+                </span>
+              </div>
+              <h3>
+                <a href="pages/produto.html?id=aether">
+                  Aether Wing
+                </a>
+              </h3>
+              <p>
+                Um pacto silencioso com o céu. Deixe o peso do mundo onde ele pertence: no chão.
+              </p>
+              <div class="card-bottom">
+                <span>
+                  R$ 349
+                  <small>
+                    valor fictício
+                  </small>
+                </span>
+                <a class="round-link" href="pages/produto.html?id=aether" aria-label="Consultar Aether Wing">
+                  ↗
+                </a>
+              </div>
+            </div>
+          </article>
+          <article class="potion-card" data-category="invisibilidade">
+            <a class="potion-art" href="pages/produto.html?id=void" aria-label="Conhecer Void Veil">
+              <span class="art-code">
+                AP / 04
+              </span>
+              <div class="specimen " style="--potion:#83ab92" aria-hidden="true">
+                <div class="orbit orbit-one">
+                </div>
+                <div class="orbit orbit-two">
+                </div>
+                <span class="orbit-star">
+                  ✧
+                </span>
+                <div class="bottle">
+                  <div class="bottle-cork">
+                  </div>
+                  <div class="bottle-neck">
+                  </div>
+                  <div class="bottle-glass">
+                    <div class="bottle-liquid">
+                    </div>
+                    <div class="bottle-label">
+                      <span>
+                        ARCANA
+                      </span>
+                      <b>
+                        ✦
+                      </b>
+                      <small>
+                        NO. 04
+                      </small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <span class="art-category">
+                Invisibilidade
+              </span>
+            </a>
+            <div class="potion-copy">
+              <div class="eyebrow">
+                Fórmula 04
+                <span>
+                  12 h
+                </span>
+              </div>
+              <h3>
+                <a href="pages/produto.html?id=void">
+                  Void Veil
+                </a>
+              </h3>
+              <p>
+                A luz se curva. Sua presença se dissolve. Nem toda ausência é um vazio.
+              </p>
+              <div class="card-bottom">
+                <span>
+                  R$ 549
+                  <small>
+                    valor fictício
+                  </small>
+                </span>
+                <a class="round-link" href="pages/produto.html?id=void" aria-label="Consultar Void Veil">
+                  ↗
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="manifesto section">
+        <div class="manifesto-symbol" aria-hidden="true">
+          ☽
+          <span>
+            ✧
+          </span>
+          ☾
+        </div>
+        <div>
+          <p class="eyebrow">
+            02 / A lei da alquimia
+          </p>
+          <h2>
+            Nada extraordinário
+            <br>
+            permanece
+            <em>
+              para sempre.
+            </em>
+          </h2>
+          <p>
+            Cada frasco guarda uma possibilidade — e um limite. Na Arcana, o tempo faz parte da fórmula. Conheça a duração, o efeito e a história antes de escolher seu encantamento.
+          </p>
+          <a class="text-link" href="pages/como-funciona.html">
+            Conheça os princípios ↗
+          </a>
+        </div>
+      </section>
+      <section class="closing section">
+        <p class="eyebrow">
+          Das páginas do grimório
+        </p>
+        <h2>
+          Todo poder deixa
+          <br>
+          uma
+          <em>
+            marca.
+          </em>
+        </h2>
+        <p>
+          Algumas histórias são escritas com tinta.
+          <br>
+          Outras, com a última gota de uma poção.
+        </p>
+        <a class="button button-outline" href="pages/grimorio.html">
+          Abrir o grimório
+          <span>
+            ↗
+          </span>
+        </a>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div>
+        <a class="brand" href="index.html">
+          ✧ ARCANA
+        </a>
+        <p>
+          O extraordinário tem seu preço.
+          <br>
+          A imaginação, não.
+        </p>
+      </div>
+      <div>
+        <span class="eyebrow">
+          Um universo imaginário
+        </span>
+        <p>
+          Projeto escolar de HTML, CSS e JavaScript.
+          <br>
+          Poções, efeitos e valores são fictícios.
+          <br>
+          Nenhuma compra ou pagamento é realizado.
+        </p>
+      </div>
+      <span class="footer-end">
+        FEITO DE CÓDIGO & MISTÉRIO
+        <br>
+        © 2026 ARCANA POTIONS
+      </span>
     </footer>
-
-
-
-    <!-- =====================================================
-         JAVASCRIPT
-    ====================================================== -->
-
-    <script src="js/script.js"></script>
-
-</body>
-
+    <div class="toast" id="toast" role="status" aria-live="polite">
+    </div>
+  </body>
 </html>

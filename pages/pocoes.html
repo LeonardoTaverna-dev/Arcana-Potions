@@ -1,950 +1,409 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
-<head>
-
+  <head>
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>Arquivo de Poções — Arcana Potions</title>
-
-    <link
-        rel="stylesheet"
-        href="../css/style.css"
-    >
-
-</head>
-
-
-<body>
-
-
-    <!-- =====================================================
-         CABEÇALHO
-    ====================================================== -->
-
-    <header class="topo">
-
-        <a
-            href="../index.html"
-            class="logo"
-        >
-
-            <span>
-                ARCANA
-            </span>
-
-            <small>
-                EXTRAORDINARY ALCHEMY
-            </small>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Arcana Potions: um universo fictício de poções mágicas. Projeto escolar de desenvolvimento web.">
+    <meta name="theme-color" content="#0c0d0c">
+    <title>
+      Arquivo | Arcana Potions
+    </title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/theme.js">
+    </script>
+    <script src="../js/data.js" defer>
+    </script>
+    <script src="../js/script.js" defer>
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">
+      Pular para o conteúdo
+    </a>
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="Arcana Potions — início">
+        <span class="brand-mark" aria-hidden="true">
+          ✧
+        </span>
+        <span>
+          ARCANA
+          <small>
+            POTIONS & CURIOSITIES
+          </small>
+        </span>
+      </a>
+      <nav aria-label="Navegação principal">
+        <a href="../pages/pocoes.html" aria-current="page">
+          Arquivo
         </a>
-
-
-        <nav class="menu">
-
-            <a href="pocoes.html">
-                Arquivo
-            </a>
-
-            <a href="como-funciona.html">
-                Alquimia
-            </a>
-
-            <a href="grimorio.html">
-                Grimório
-            </a>
-
-            <a href="sobre.html">
-                Arcana
-            </a>
-
-        </nav>
-
-
-        <div class="controles">
-
-
-            <button
-                id="temaBtn"
-                class="tema-arcana"
-                aria-label="Alterar protocolo"
-            >
-
-                <span
-                    class="tema-runa"
-                    id="temaIcone"
-                >
-                    ☾
-                </span>
-
-                <span
-                    class="tema-nome"
-                    id="temaTexto"
-                >
-                    NIGHT
-                </span>
-
-                <span class="tema-detalhe">
-                    PROTOCOL
-                </span>
-
-            </button>
-
-
-            <a
-                href="carrinho.html"
-                class="carrinho"
-            >
-
-                <span>
-                    Bag
-                </span>
-
-                <strong>
-                    00
-                </strong>
-
-            </a>
-
-
-        </div>
-
+        <a href="../pages/como-funciona.html" >
+          Alquimia
+        </a>
+        <a href="../pages/grimorio.html" >
+          Grimório
+        </a>
+        <a href="../pages/sobre.html" >
+          A Arcana
+        </a>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-button" id="temaBtn" type="button" aria-label="Ativar tema Eclipse" aria-pressed="false">
+          <span aria-hidden="true">
+            ☾
+          </span>
+          <span id="temaTexto">
+            Noturno
+          </span>
+        </button>
+        <a class="bag-link" href="../pages/carrinho.html" aria-label="Bolsa de poções">
+          Bolsa
+          <span data-bag-count>
+            0
+          </span>
+        </a>
+      </div>
     </header>
-
-
-
-    <!-- =====================================================
-         CONTEÚDO
-    ====================================================== -->
-
-    <main>
-
-
-        <!-- =================================================
-             HERO DO ARQUIVO
-        ================================================== -->
-
-        <section class="arquivo-hero">
-
-
-            <div class="arquivo-intro">
-
-                <span class="etiqueta">
-                    ARCANA // ARCHIVE 001
-                </span>
-
-
-                <h1>
-
-                    ARQUIVO
-                    <br>
-
-                    <span>
-                        DE POÇÕES.
-                    </span>
-
-                </h1>
-
-
-                <p>
-
-                    Fórmulas catalogadas, testadas e
-                    classificadas pelo departamento
-                    de alquimia extraordinária.
-
-                </p>
-
-            </div>
-
-
-
-            <div class="arquivo-dados">
-
-
-                <div>
-
-                    <span>
-                        FÓRMULAS
-                    </span>
-
-                    <strong>
-                        04
-                    </strong>
-
-                </div>
-
-
-                <div>
-
-                    <span>
-                        STATUS
-                    </span>
-
-                    <strong>
-                        ATIVO
-                    </strong>
-
-                </div>
-
-
-                <div>
-
-                    <span>
-                        RISCO
-                    </span>
-
-                    <strong>
-                        VARIÁVEL
-                    </strong>
-
-                </div>
-
-
-            </div>
-
-
-        </section>
-
-
-
-        <!-- =================================================
-             AVISO
-        ================================================== -->
-
-        <section class="arquivo-aviso">
-
-
-            <span>
-                ⚠
-            </span>
-
-
-            <p>
-
-                <strong>
-                    AVISO DO ARQUIVO
-                </strong>
-
-                Toda fórmula produz efeitos secundários.
-                Leia a composição completa antes de
-                escolher seu protocolo.
-
-            </p>
-
-
-        </section>
-
-
-
-        <!-- =================================================
-             FILTROS
-        ================================================== -->
-
-        <section class="arquivo-filtros">
-
-
-            <div class="filtro-titulo">
-
-                <span>
-                    CLASSIFICAÇÃO
-                </span>
-
-                <strong>
-                    FILTRAR FÓRMULAS
-                </strong>
-
-            </div>
-
-
-
-            <div class="filtros-botoes">
-
-                <button class="filtro-ativo">
-                    TODAS
-                </button>
-
-                <button>
-                    FORÇA
-                </button>
-
-                <button>
-                    VELOCIDADE
-                </button>
-
-                <button>
-                    VOO
-                </button>
-
-                <button>
-                    INVISIBILIDADE
-                </button>
-
-            </div>
-
-
-        </section>
-
-
-
-        <!-- =================================================
-             CATÁLOGO
-        ================================================== -->
-
-        <section class="arquivo-catalogo">
-
-
-
-            <!-- =================================================
-                 TITAN'S BLOOD
-            ================================================== -->
-
-            <article
-                class="pocao-card"
-                data-pocao="titan"
-            >
-
-
-                <div class="pocao-visual">
-
-                    <span class="pocao-codigo">
-                        AP-001
-                    </span>
-
-
-                    <div class="pocao-fraco">
-
-                        <div class="pocao-gota">
-                        </div>
-
-                        <div class="pocao-vidro">
-                        </div>
-
-                    </div>
-
-
-                    <span class="pocao-classificacao">
-                        FORÇA
-                    </span>
-
-                </div>
-
-
-
-                <div class="pocao-info">
-
-
-                    <span class="pocao-numero">
-                        FORMULA 001
-                    </span>
-
-
-                    <h2>
-                        Titan's Blood
-                    </h2>
-
-
-                    <p class="pocao-descricao">
-
-                        Uma fórmula concentrada capaz de
-                        multiplicar temporariamente a força
-                        física do usuário.
-
-                    </p>
-
-
-
-                    <div class="pocao-detalhes">
-
-
-                        <div>
-
-                            <span>
-                                EFEITO
-                            </span>
-
-                            <strong>
-                                FORÇA × 8
-                            </strong>
-
-                        </div>
-
-
-                        <div>
-
-                            <span>
-                                DURAÇÃO
-                            </span>
-
-                            <strong>
-                                01 HORA
-                            </strong>
-
-                        </div>
-
-
-                    </div>
-
-
-
-                    <div class="pocao-alerta">
-
-
-                        <span>
-                            EFEITO COLATERAL
-                        </span>
-
-
-                        <p>
-
-                            Tremores musculares e fadiga
-                            intensa após o término.
-
-                        </p>
-
-
-                    </div>
-
-
-
-                    <div class="pocao-compra">
-
-
-                        <strong>
-                            R$ 149
-                        </strong>
-
-
-                        <a
-                            href="produto.html?id=titan"
-                            class="botao-formula"
-                            data-pocao="titan"
-                        >
-
-                            CONSULTAR FÓRMULA →
-
-                        </a>
-
-
-                    </div>
-
-
-                </div>
-
-
-            </article>
-
-
-
-            <!-- =================================================
-                 MERCURY RUSH
-            ================================================== -->
-
-            <article
-                class="pocao-card"
-                data-pocao="mercury"
-            >
-
-
-                <div class="pocao-visual">
-
-                    <span class="pocao-codigo">
-                        AP-002
-                    </span>
-
-
-                    <div class="pocao-fraco pocao-azul">
-
-                        <div class="pocao-gota">
-                        </div>
-
-                        <div class="pocao-vidro">
-                        </div>
-
-                    </div>
-
-
-                    <span class="pocao-classificacao">
-                        VELOCIDADE
-                    </span>
-
-                </div>
-
-
-
-                <div class="pocao-info">
-
-
-                    <span class="pocao-numero">
-                        FORMULA 002
-                    </span>
-
-
-                    <h2>
-                        Mercury Rush
-                    </h2>
-
-
-                    <p class="pocao-descricao">
-
-                        Acelera drasticamente a percepção
-                        e os movimentos do usuário,
-                        aproximando seus reflexos do
-                        limite humano conhecido.
-
-                    </p>
-
-
-
-                    <div class="pocao-detalhes">
-
-
-                        <div>
-
-                            <span>
-                                EFEITO
-                            </span>
-
-                            <strong>
-                                VELOCIDADE × 6
-                            </strong>
-
-                        </div>
-
-
-                        <div>
-
-                            <span>
-                                DURAÇÃO
-                            </span>
-
-                            <strong>
-                                03 HORAS
-                            </strong>
-
-                        </div>
-
-
-                    </div>
-
-
-
-                    <div class="pocao-alerta">
-
-
-                        <span>
-                            EFEITO COLATERAL
-                        </span>
-
-
-                        <p>
-
-                            Percepção temporal alterada,
-                            tontura e dificuldade para
-                            permanecer parado.
-
-                        </p>
-
-
-                    </div>
-
-
-
-                    <div class="pocao-compra">
-
-
-                        <strong>
-                            R$ 229
-                        </strong>
-
-
-                        <a
-                            href="produto.html?id=mercury"
-                            class="botao-formula"
-                            data-pocao="mercury"
-                        >
-
-                            CONSULTAR FÓRMULA →
-
-                        </a>
-
-
-                    </div>
-
-
-                </div>
-
-
-            </article>
-
-
-
-            <!-- =================================================
-                 AETHER WING
-            ================================================== -->
-
-            <article
-                class="pocao-card"
-                data-pocao="aether"
-            >
-
-
-                <div class="pocao-visual">
-
-                    <span class="pocao-codigo">
-                        AP-003
-                    </span>
-
-
-                    <div class="pocao-fraco pocao-roxo">
-
-                        <div class="pocao-gota">
-                        </div>
-
-                        <div class="pocao-vidro">
-                        </div>
-
-                    </div>
-
-
-                    <span class="pocao-classificacao">
-                        VOO
-                    </span>
-
-                </div>
-
-
-
-                <div class="pocao-info">
-
-
-                    <span class="pocao-numero">
-                        FORMULA 003
-                    </span>
-
-
-                    <h2>
-                        Aether Wing
-                    </h2>
-
-
-                    <p class="pocao-descricao">
-
-                        Altera temporariamente a densidade
-                        corporal, permitindo ao usuário
-                        desafiar a gravidade.
-
-                    </p>
-
-
-
-                    <div class="pocao-detalhes">
-
-
-                        <div>
-
-                            <span>
-                                EFEITO
-                            </span>
-
-                            <strong>
-                                VOO LIVRE
-                            </strong>
-
-                        </div>
-
-
-                        <div>
-
-                            <span>
-                                DURAÇÃO
-                            </span>
-
-                            <strong>
-                                06 HORAS
-                            </strong>
-
-                        </div>
-
-
-                    </div>
-
-
-
-                    <div class="pocao-alerta">
-
-
-                        <span>
-                            EFEITO COLATERAL
-                        </span>
-
-
-                        <p>
-
-                            Náusea, vertigem e perda
-                            temporária da noção espacial.
-
-                        </p>
-
-
-                    </div>
-
-
-
-                    <div class="pocao-compra">
-
-
-                        <strong>
-                            R$ 349
-                        </strong>
-
-
-                        <a
-                            href="produto.html?id=aether"
-                            class="botao-formula"
-                            data-pocao="aether"
-                        >
-
-                            CONSULTAR FÓRMULA →
-
-                        </a>
-
-
-                    </div>
-
-
-                </div>
-
-
-            </article>
-
-
-
-            <!-- =================================================
-                 VOID VEIL
-            ================================================== -->
-
-            <article
-                class="pocao-card"
-                data-pocao="void"
-            >
-
-
-                <div class="pocao-visual">
-
-                    <span class="pocao-codigo">
-                        AP-004
-                    </span>
-
-
-                    <div class="pocao-fraco pocao-vermelho">
-
-                        <div class="pocao-gota">
-                        </div>
-
-                        <div class="pocao-vidro">
-                        </div>
-
-                    </div>
-
-
-                    <span class="pocao-classificacao">
-                        INVISIBILIDADE
-                    </span>
-
-                </div>
-
-
-
-                <div class="pocao-info">
-
-
-                    <span class="pocao-numero">
-                        FORMULA 004
-                    </span>
-
-
-                    <h2>
-                        Void Veil
-                    </h2>
-
-
-                    <p class="pocao-descricao">
-
-                        Uma fórmula experimental que
-                        interfere na interação da luz
-                        com o corpo humano.
-
-                    </p>
-
-
-
-                    <div class="pocao-detalhes">
-
-
-                        <div>
-
-                            <span>
-                                EFEITO
-                            </span>
-
-                            <strong>
-                                INVISÍVEL
-                            </strong>
-
-                        </div>
-
-
-                        <div>
-
-                            <span>
-                                DURAÇÃO
-                            </span>
-
-                            <strong>
-                                12 HORAS
-                            </strong>
-
-                        </div>
-
-
-                    </div>
-
-
-
-                    <div class="pocao-alerta">
-
-
-                        <span>
-                            EFEITO COLATERAL
-                        </span>
-
-
-                        <p>
-
-                            Sensação de isolamento,
-                            alteração da temperatura
-                            corporal e ecos visuais.
-
-                        </p>
-
-
-                    </div>
-
-
-
-                    <div class="pocao-compra">
-
-
-                        <strong>
-                            R$ 549
-                        </strong>
-
-
-                        <a
-                            href="produto.html?id=void"
-                            class="botao-formula"
-                            data-pocao="void"
-                        >
-
-                            CONSULTAR FÓRMULA →
-
-                        </a>
-
-
-                    </div>
-
-
-                </div>
-
-
-            </article>
-
-
-        </section>
-
-
-
-        <!-- =================================================
-             FINAL DO ARQUIVO
-        ================================================== -->
-
-        <section class="arquivo-final">
-
-
-            <span>
-                ARCANA // END OF CURRENT RECORD
-            </span>
-
-
-            <h2>
-
-                Mais fórmulas estão
-                <br>
-                sendo desenvolvidas.
-
-            </h2>
-
-
-            <p>
-
-                O arquivo é atualizado conforme
-                novos experimentos são concluídos.
-
-            </p>
-
-
-        </section>
-
-
-    </main>
-
-
-
-    <!-- =====================================================
-         RODAPÉ
-    ====================================================== -->
-
-    <footer class="rodape">
-
-
-        <div>
-
-            <strong>
-                ARCANA POTIONS
-            </strong>
-
-            <span>
-                EXTRAORDINARY ALCHEMY
-            </span>
-
-        </div>
-
-
-        <p>
-
-            Projeto fictício desenvolvido para fins
-            educacionais e experimentais.
-            Nenhuma poção ou transação é real.
-
+    <main id="conteudo">
+      <section class="page-intro">
+        <p class="eyebrow">
+          ARCANA / O arquivo
         </p>
-
-
+        <h1>
+          O extraordinário,
+          <br>
+          <em>
+            sob vidro.
+          </em>
+        </h1>
+        <p>
+          Quatro essências. Quatro maneiras de atravessar os limites do possível.
+        </p>
+      </section>
+      <section class="section catalog-section" aria-label="Catálogo de poções">
+        <div class="filter-bar">
+          <div class="filters" role="group" aria-label="Filtrar por poder">
+            <button type="button" data-filter="todos" aria-pressed="true">
+              Todas
+            </button>
+            <button type="button" data-filter="forca" aria-pressed="false">
+              Força
+            </button>
+            <button type="button" data-filter="velocidade" aria-pressed="false">
+              Velocidade
+            </button>
+            <button type="button" data-filter="voo" aria-pressed="false">
+              Voo
+            </button>
+            <button type="button" data-filter="invisibilidade" aria-pressed="false">
+              Invisibilidade
+            </button>
+          </div>
+          <span id="filter-count" role="status">
+            4 fórmulas
+          </span>
+        </div>
+        <div class="potion-grid">
+          <article class="potion-card" data-category="forca">
+            <a class="potion-art" href="../pages/produto.html?id=titan" aria-label="Conhecer Titan’s Blood">
+              <span class="art-code">
+                AP / 01
+              </span>
+              <div class="specimen " style="--potion:#b56380" aria-hidden="true">
+                <div class="orbit orbit-one">
+                </div>
+                <div class="orbit orbit-two">
+                </div>
+                <span class="orbit-star">
+                  ✧
+                </span>
+                <div class="bottle">
+                  <div class="bottle-cork">
+                  </div>
+                  <div class="bottle-neck">
+                  </div>
+                  <div class="bottle-glass">
+                    <div class="bottle-liquid">
+                    </div>
+                    <div class="bottle-label">
+                      <span>
+                        ARCANA
+                      </span>
+                      <b>
+                        ✦
+                      </b>
+                      <small>
+                        NO. 01
+                      </small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <span class="art-category">
+                Força
+              </span>
+            </a>
+            <div class="potion-copy">
+              <div class="eyebrow">
+                Fórmula 01
+                <span>
+                  01 h
+                </span>
+              </div>
+              <h3>
+                <a href="../pages/produto.html?id=titan">
+                  Titan’s Blood
+                </a>
+              </h3>
+              <p>
+                A força dos antigos titãs, selada em um frasco. Para mover aquilo que parecia impossível.
+              </p>
+              <div class="card-bottom">
+                <span>
+                  R$ 149
+                  <small>
+                    valor fictício
+                  </small>
+                </span>
+                <a class="round-link" href="../pages/produto.html?id=titan" aria-label="Consultar Titan’s Blood">
+                  ↗
+                </a>
+              </div>
+            </div>
+          </article>
+          <article class="potion-card" data-category="velocidade">
+            <a class="potion-art" href="../pages/produto.html?id=mercury" aria-label="Conhecer Mercury Rush">
+              <span class="art-code">
+                AP / 02
+              </span>
+              <div class="specimen " style="--potion:#72b5c3" aria-hidden="true">
+                <div class="orbit orbit-one">
+                </div>
+                <div class="orbit orbit-two">
+                </div>
+                <span class="orbit-star">
+                  ✧
+                </span>
+                <div class="bottle">
+                  <div class="bottle-cork">
+                  </div>
+                  <div class="bottle-neck">
+                  </div>
+                  <div class="bottle-glass">
+                    <div class="bottle-liquid">
+                    </div>
+                    <div class="bottle-label">
+                      <span>
+                        ARCANA
+                      </span>
+                      <b>
+                        ✦
+                      </b>
+                      <small>
+                        NO. 02
+                      </small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <span class="art-category">
+                Velocidade
+              </span>
+            </a>
+            <div class="potion-copy">
+              <div class="eyebrow">
+                Fórmula 02
+                <span>
+                  03 h
+                </span>
+              </div>
+              <h3>
+                <a href="../pages/produto.html?id=mercury">
+                  Mercury Rush
+                </a>
+              </h3>
+              <p>
+                O mundo desacelera. Seus passos, não. Um instante suspenso entre o agora e o impossível.
+              </p>
+              <div class="card-bottom">
+                <span>
+                  R$ 229
+                  <small>
+                    valor fictício
+                  </small>
+                </span>
+                <a class="round-link" href="../pages/produto.html?id=mercury" aria-label="Consultar Mercury Rush">
+                  ↗
+                </a>
+              </div>
+            </div>
+          </article>
+          <article class="potion-card" data-category="voo">
+            <a class="potion-art" href="../pages/produto.html?id=aether" aria-label="Conhecer Aether Wing">
+              <span class="art-code">
+                AP / 03
+              </span>
+              <div class="specimen " style="--potion:#ad8bd6" aria-hidden="true">
+                <div class="orbit orbit-one">
+                </div>
+                <div class="orbit orbit-two">
+                </div>
+                <span class="orbit-star">
+                  ✧
+                </span>
+                <div class="bottle">
+                  <div class="bottle-cork">
+                  </div>
+                  <div class="bottle-neck">
+                  </div>
+                  <div class="bottle-glass">
+                    <div class="bottle-liquid">
+                    </div>
+                    <div class="bottle-label">
+                      <span>
+                        ARCANA
+                      </span>
+                      <b>
+                        ✦
+                      </b>
+                      <small>
+                        NO. 03
+                      </small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <span class="art-category">
+                Voo
+              </span>
+            </a>
+            <div class="potion-copy">
+              <div class="eyebrow">
+                Fórmula 03
+                <span>
+                  06 h
+                </span>
+              </div>
+              <h3>
+                <a href="../pages/produto.html?id=aether">
+                  Aether Wing
+                </a>
+              </h3>
+              <p>
+                Um pacto silencioso com o céu. Deixe o peso do mundo onde ele pertence: no chão.
+              </p>
+              <div class="card-bottom">
+                <span>
+                  R$ 349
+                  <small>
+                    valor fictício
+                  </small>
+                </span>
+                <a class="round-link" href="../pages/produto.html?id=aether" aria-label="Consultar Aether Wing">
+                  ↗
+                </a>
+              </div>
+            </div>
+          </article>
+          <article class="potion-card" data-category="invisibilidade">
+            <a class="potion-art" href="../pages/produto.html?id=void" aria-label="Conhecer Void Veil">
+              <span class="art-code">
+                AP / 04
+              </span>
+              <div class="specimen " style="--potion:#83ab92" aria-hidden="true">
+                <div class="orbit orbit-one">
+                </div>
+                <div class="orbit orbit-two">
+                </div>
+                <span class="orbit-star">
+                  ✧
+                </span>
+                <div class="bottle">
+                  <div class="bottle-cork">
+                  </div>
+                  <div class="bottle-neck">
+                  </div>
+                  <div class="bottle-glass">
+                    <div class="bottle-liquid">
+                    </div>
+                    <div class="bottle-label">
+                      <span>
+                        ARCANA
+                      </span>
+                      <b>
+                        ✦
+                      </b>
+                      <small>
+                        NO. 04
+                      </small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <span class="art-category">
+                Invisibilidade
+              </span>
+            </a>
+            <div class="potion-copy">
+              <div class="eyebrow">
+                Fórmula 04
+                <span>
+                  12 h
+                </span>
+              </div>
+              <h3>
+                <a href="../pages/produto.html?id=void">
+                  Void Veil
+                </a>
+              </h3>
+              <p>
+                A luz se curva. Sua presença se dissolve. Nem toda ausência é um vazio.
+              </p>
+              <div class="card-bottom">
+                <span>
+                  R$ 549
+                  <small>
+                    valor fictício
+                  </small>
+                </span>
+                <a class="round-link" href="../pages/produto.html?id=void" aria-label="Consultar Void Veil">
+                  ↗
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div>
+        <a class="brand" href="../index.html">
+          ✧ ARCANA
+        </a>
+        <p>
+          O extraordinário tem seu preço.
+          <br>
+          A imaginação, não.
+        </p>
+      </div>
+      <div>
+        <span class="eyebrow">
+          Um universo imaginário
+        </span>
+        <p>
+          Projeto escolar de HTML, CSS e JavaScript.
+          <br>
+          Poções, efeitos e valores são fictícios.
+          <br>
+          Nenhuma compra ou pagamento é realizado.
+        </p>
+      </div>
+      <span class="footer-end">
+        FEITO DE CÓDIGO & MISTÉRIO
+        <br>
+        © 2026 ARCANA POTIONS
+      </span>
     </footer>
-
-
-
-    <!-- =====================================================
-         JAVASCRIPT
-    ====================================================== -->
-
-    <script src="../js/script.js"></script>
-
-
-</body>
-
+    <div class="toast" id="toast" role="status" aria-live="polite">
+    </div>
+  </body>
 </html>
